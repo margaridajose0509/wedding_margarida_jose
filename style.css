@@ -15,13 +15,14 @@
 
 body, html {
     height: 100%;
-    font-family: 'Cinzel', serif; /* Matching the elegant serif font */
+    font-family: 'Cinzel', serif; 
     background-color: var(--sage-bg);
     color: var(--wedding-white);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* 2. LANGUAGE SWITCHER (STAY AT TOP) */
+/* 2. LANGUAGE SWITCHER */
 .lang-switch {
     position: fixed;
     top: 20px;
@@ -30,6 +31,9 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     color: var(--wedding-white);
+    background: rgba(0, 0, 0, 0.1); /* Slight background for readability */
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 .lang-switch button {
@@ -47,25 +51,24 @@ body, html {
     text-decoration: underline;
 }
 
-/* 3. PAGE 1: HERO SECTION LAYOUT */
+/* 3. PAGE 1: HERO SECTION [cite: 1, 4-12] */
 #hero-page {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 0;
+    padding: 60px 20px;
     background-color: var(--sage-bg);
 }
 
-/* Names Spacing [cite: 1, 3] */
 .names-container {
     text-align: center;
     margin-top: 20px;
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 5vw, 2.8rem); /* Responsive font size */
     font-weight: 400;
     letter-spacing: 8px;
     margin: 10px 0;
@@ -77,10 +80,10 @@ h1 {
     margin: 5px 0;
 }
 
-/* Floral Art Spacing */
 .floral-container {
-    width: 65%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 650px;
+    margin: 20px 0;
 }
 
 .floral-art {
@@ -90,14 +93,16 @@ h1 {
 
 /* 4. BOTTOM GRID (INFO & COUNTDOWN) */
 .bottom-grid {
-    width: 90%;
+    width: 100%;
+    max-width: 1100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    gap: 30px;
 }
 
-/* Left Side: Gold/Cream Styling */
 .event-info {
     color: var(--wedding-gold); 
     text-align: center;
@@ -114,6 +119,7 @@ h1 {
 .date-location {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -129,14 +135,14 @@ h1 {
     background-color: var(--wedding-gold);
 }
 
-/* Right Side: White Countdown Styling */
 .timer-container {
     color: var(--wedding-white);
     text-align: center;
+    min-width: 300px;
 }
 
 .countdown-numbers {
-    font-size: 4.5rem; 
+    font-size: clamp(2rem, 8vw, 4.5rem); 
     letter-spacing: 5px;
     font-weight: 300;
     line-height: 1;
@@ -146,38 +152,106 @@ h1 {
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
     margin-top: 15px;
     padding: 0 10px;
 }
 
-/* 5. OTHER PAGES (CONTENT SECTIONS) */
-.content-section {
-    padding: 100px 10%;
-    min-height: 100vh;
-    background-color: var(--cream-light);
+/* 5. PAGE 2: WELCOME SECTION */
+#welcome-page {
+    background-color: var(--wedding-white);
     color: var(--text-dark);
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    padding: 100px 5%;
 }
 
-.content-section h3 {
-    font-size: 2rem;
-    letter-spacing: 4px;
-    margin-bottom: 30px;
+.welcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Slightly wider right column for story */
+    gap: 60px;
+    max-width: 1100px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.welcome-left {
+    text-align: left;
+}
+
+.welcome-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: var(--sage-bg);
+    margin-bottom: 30px;
+    line-height: 0.9;
 }
 
-/* 6. MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    h1 { font-size: 1.8rem; }
+.floral-welcome {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.welcome-date {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+.welcome-right {
+    text-align: right;
+    font-family: 'Cinzel', serif;
+}
+
+.story-container p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.story-footer {
+    font-weight: bold;
+    margin-top: 30px;
+    display: block;
+}
+
+/* 6. MAP STYLING [cite: 24-33] */
+.map-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+}
+
+/* 7. MOBILE RESPONSIVENESS */
+@media (max-width: 850px) {
+    .welcome-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .welcome-left, .welcome-right {
+        text-align: center;
+    }
+    .welcome-title {
+        font-size: 3.5rem;
+    }
     .bottom-grid {
         flex-direction: column;
         gap: 50px;
     }
-    .countdown-numbers { font-size: 3rem; }
-    .date-location { gap: 15px; }
+    .vertical-divider {
+        height: 1px;
+        width: 100px;
+    }
+    .date-location {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
