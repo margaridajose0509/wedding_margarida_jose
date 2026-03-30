@@ -1,0 +1,126 @@
+:root {
+    --sage-bg: #98ac84; /* Sage green from your screenshot */
+    --wedding-white: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--sage-bg);
+    font-family: 'Cinzel', serif;
+    color: var(--wedding-white);
+}
+
+#hero-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+
+/* Names Spacing */
+.names-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 8px;
+    margin: 10px 0;
+}
+
+.ampersand {
+    font-size: 1.8rem;
+    display: block;
+    margin: 5px 0;
+}
+
+/* Floral Art Spacing */
+.floral-container {
+    width: 60%;
+    max-width: 600px;
+}
+
+.floral-art {
+    width: 100%;
+    height: auto;
+}
+
+/* Bottom Layout Spacing */
+.bottom-grid {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.casamos {
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.date-location {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.date-box, .location-box {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 60px;
+    background-color: var(--wedding-white);
+}
+
+/* Countdown Spacing */
+.countdown-numbers {
+    font-size: 3rem;
+    letter-spacing: 10px;
+    font-weight: 300;
+}
+
+.countdown-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    padding: 0 5px;
+}
+
+.lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.lang-switch button:hover {
+    text-decoration: underline;
+}

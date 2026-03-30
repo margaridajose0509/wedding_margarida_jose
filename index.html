@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Margarida & José María</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button onclick="setLanguage('pt')">PT</button> | 
+        <button onclick="setLanguage('es')">ES</button>
+    </div>
+
+    <section id="hero-page">
+        <div class="names-container">
+            <h1>ANA MARGARIDA</h1>
+            <span class="ampersand">&</span>
+            <h1>JOSÉ MARÍA</h1>
+        </div>
+
+        <div class="floral-container">
+            <img src="floral.png" alt="Floral" class="floral-art">
+        </div>
+
+        <div class="bottom-grid">
+            <div class="event-info">
+                <p class="casamos" data-key="nos_casamos">¡NOS CASAMOS!</p>
+                <div class="date-location">
+                    <div class="date-box">
+                        <p data-key="date_month">5 SEPTIEMBRE,</p>
+                        <p>2026</p>
+                    </div>
+                    <div class="vertical-divider"></div>
+                    <div class="location-box">
+                        <p data-key="en">EN</p>
+                        <p>ALCANENA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-container">
+                <div id="countdown" class="countdown-numbers"></div>
+                <div class="countdown-labels">
+                    <span data-key="label_days">DÍAS</span>
+                    <span data-key="label_hours">HORAS</span>
+                    <span data-key="label_mins">MINUTOS</span>
+                    <span data-key="label_secs">SEGUNDOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h3 data-key="welcome_title">BIENVENIDOS</h3>
+        <p data-key="story_p1">Érase una vez...</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
