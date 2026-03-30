@@ -1,17 +1,53 @@
+/* 1. VARIABLES & RESET */
 :root {
-    --sage-bg: #98ac84; /* Sage green from your screenshot */
-    --wedding-white: #ffffff;
+    --sage-bg: #98ac84;        /* Sage green from screenshots */
+    --wedding-white: #ffffff;  /* Pure white for countdown */
+    --wedding-gold: #ead8b1;   /* Gold/Cream for left-side info */
+    --cream-light: #f9f4f2;    /* Background for other sections */
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     height: 100%;
+    font-family: 'Cinzel', serif; /* Matching the elegant serif font */
     background-color: var(--sage-bg);
-    font-family: 'Cinzel', serif;
+    color: var(--wedding-white);
+    scroll-behavior: smooth;
+}
+
+/* 2. LANGUAGE SWITCHER (STAY AT TOP) */
+.lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
     color: var(--wedding-white);
 }
 
+.lang-switch button {
+    background: none;
+    border: none;
+    color: var(--wedding-white);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    transition: opacity 0.3s;
+}
+
+.lang-switch button:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* 3. PAGE 1: HERO SECTION LAYOUT */
 #hero-page {
     height: 100vh;
     display: flex;
@@ -19,16 +55,17 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 60px 0;
-    box-sizing: border-box;
+    background-color: var(--sage-bg);
 }
 
-/* Names Spacing */
+/* Names Spacing [cite: 1, 3] */
 .names-container {
     text-align: center;
+    margin-top: 20px;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 400;
     letter-spacing: 8px;
     margin: 10px 0;
@@ -42,8 +79,8 @@ h1 {
 
 /* Floral Art Spacing */
 .floral-container {
-    width: 60%;
-    max-width: 600px;
+    width: 65%;
+    max-width: 700px;
 }
 
 .floral-art {
@@ -51,76 +88,96 @@ h1 {
     height: auto;
 }
 
-/* Bottom Layout Spacing */
+/* 4. BOTTOM GRID (INFO & COUNTDOWN) */
 .bottom-grid {
     width: 90%;
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 40px;
+}
+
+/* Left Side: Gold/Cream Styling */
+.event-info {
+    color: var(--wedding-gold); 
+    text-align: center;
 }
 
 .casamos {
     letter-spacing: 5px;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    text-align: center;
+    font-size: 1.8rem; 
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .date-location {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .date-box, .location-box {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    line-height: 1.6;
 }
 
 .vertical-divider {
     width: 1px;
-    height: 60px;
-    background-color: var(--wedding-white);
+    height: 70px;
+    background-color: var(--wedding-gold);
 }
 
-/* Countdown Spacing */
+/* Right Side: White Countdown Styling */
+.timer-container {
+    color: var(--wedding-white);
+    text-align: center;
+}
+
 .countdown-numbers {
-    font-size: 3rem;
-    letter-spacing: 10px;
+    font-size: 4.5rem; 
+    letter-spacing: 5px;
     font-weight: 300;
+    line-height: 1;
 }
 
 .countdown-labels {
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    margin-top: 5px;
-    padding: 0 5px;
-}
-
-.lang-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
-    color: white;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    padding: 0 10px;
 }
 
-.lang-switch button {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 5px;
+/* 5. OTHER PAGES (CONTENT SECTIONS) */
+.content-section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    background-color: var(--cream-light);
+    color: var(--text-dark);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.lang-switch button:hover {
-    text-decoration: underline;
+.content-section h3 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    color: var(--sage-bg);
+}
+
+/* 6. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    .bottom-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .countdown-numbers { font-size: 3rem; }
+    .date-location { gap: 15px; }
 }
