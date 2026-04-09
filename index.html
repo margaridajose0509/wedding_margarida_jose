@@ -1,86 +1,491 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ana Margarida & José María</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="lang-switch">
-        <button onclick="setLanguage('pt')">PT</button> | 
-        <button onclick="setLanguage('es')">ES</button>
+      <button onclick="setLanguage('pt')">PT</button> |
+      <button onclick="setLanguage('es')">ES</button>
     </div>
 
     <section id="hero-page">
-        <div class="names-container">
-            <h1>ANA MARGARIDA</h1>
-            <span class="ampersand">&</span>
-            <h1>JOSÉ MARÍA</h1>
-        </div>
+      <div class="names-container">
+        <h1>ANA MARGARIDA</h1>
+        <span class="ampersand">&</span>
+        <h1>JOSÉ MARÍA</h1>
+      </div>
 
-        <div class="floral-container">
-            <img src="floral.png" alt="Floral" class="floral-art">
-        </div>
+      <div class="floral-container">
+        <img src="images/floral_green.png" alt="Floral" class="floral-art" />
+      </div>
 
-        <div class="bottom-grid">
-            <div class="event-info">
-                <p class="casamos" data-key="nos_casamos">¡NOS CASAMOS!</p>
-                <div class="date-location">
-                    <div class="date-box">
-                        <p data-key="date_month">5 SEPTIEMBRE,</p>
-                        <p>2026</p>
-                    </div>
-                    <div class="vertical-divider"></div>
-                    <div class="location-box">
-                        <p data-key="en">EN</p>
-                        <p>ALCANENA</p>
-                    </div>
-                </div>
+      <div class="bottom-grid">
+        <div class="event-info">
+          <p class="casamos" data-key="nos_casamos"></p>
+          <div class="date-location">
+            <div class="date-box">
+              <p data-key="date_month"></p>
+              <p>2026</p>
             </div>
-
-            <div class="timer-container">
-                <div id="countdown" class="countdown-numbers"></div>
-                <div class="countdown-labels">
-                    <span data-key="label_days">DÍAS</span>
-                    <span data-key="label_hours">HORAS</span>
-                    <span data-key="label_mins">MINUTOS</span>
-                    <span data-key="label_secs">SEGUNDOS</span>
-                </div>
+            <div class="vertical-divider"></div>
+            <div class="location-box">
+              <p data-key="en">EN</p>
+              <p>ALCANENA</p>
             </div>
+          </div>
         </div>
+
+        <div class="timer-container">
+          <div id="countdown" class="countdown-numbers"></div>
+          <div class="countdown-labels">
+            <span data-key="label_days"></span>
+            <span data-key="label_hours"></span>
+            <span data-key="label_mins"></span>
+            <span data-key="label_secs"></span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="welcome-page" class="content-section">
-    <div class="welcome-grid">
+    <section id="welcome-page">
+      <div class="welcome-grid">
         <div class="welcome-left">
-            <h2 class="welcome-title" data-key="welcome_title">BIENVENIDOS</h2>
-            <img src="floral-small.png" alt="Floral Decoration" class="floral-welcome">
-            <p class="welcome-date">5 SEPTIEMBRE, 2026</p>
+          <h2 class="welcome-title" data-key="welcome_title"></h2>
+          <img
+            src="images/floral_white.png"
+            alt="Floral"
+            class="floral-welcome"
+          />
+          <p class="welcome-date">
+            <span data-key="date_month"></span>
+            <span>2026</span>
+          </p>
         </div>
-
         <div class="welcome-right">
-            <div class="story-container" data-key="welcome_story">
-                <p>Érase una vez... una ribatejana que decidió mudarse a España hace 11 años. ¿El plan? Vivir una aventura. Lo que no sabía es que el destino tenía preparado algo mejor: encontrar el amor. [cite: 14, 15]</p>
-                
-                <p>Y no con cualquier español... sino con un madrileño-gallego que, curiosamente, ¡es más portugués que muchos portugueses! [cite: 17, 18]</p>
-                
-                <p>Entre viajes, risas, momentos inesperados y mil historias que contar, fuimos escribiendo nuestra propia aventura... hasta llegar al capítulo más importante. [cite: 19, 20]</p>
-                
-                <p>El 5 de septiembre de 2026, por fin nos daremos el “sí, quiero”. Y por supuesto, no podía ser sin vosotros, las personas que hacen todo esto aún más especial. [cite: 20, 21]</p>
-                
-                <p class="story-footer">Bienvenidos a nuestra historia</p> [cite: 22]
-            </div>
+          <div
+            class="story-container"
+            id="story-text"
+            data-key="welcome_story"
+          ></div>
         </div>
-    </div>
+      </div>
+      <div class="map-container">
+        <img src="images/map.png" alt="Map" class="map-image" />
+      </div>
+    </section>
 
-    <div class="map-container">
-        <img src="map-spain-portugal.png" alt="Wedding Location Map" class="map-image">
-    </div>
-</section>
+    <section id="schedule-page" class="schedule-page">
+      <div class="schedule-grid">
+        <div class="schedule-left">
+          <h2 class="schedule-title" data-key="schedule_title"></h2>
+          <img
+            src="images/floral_white.png"
+            alt="Floral"
+            class="floral-welcome"
+          />
+          <p class="schedule-date">
+            <span data-key="date_month"></span>
+            <span>2026</span>
+          </p>
+        </div>
+        <div class="schedule-right">
+          <div
+            class="schedule-container"
+            id="schedule-text"
+            data-key="schedule_intro"
+          ></div>
+        </div>
+      </div>
+
+      <div id="timeline-section" class="timeline-section">
+        <div class="timeline-grid">
+          <div class="timeline-left">
+            <h2 class="timeline-title" data-key="timeline_title"></h2>
+          </div>
+
+          <div class="timeline-right">
+            <div class="timeline-item">
+              <span class="time">11:30 PM</span>
+              <span class="event" data-key="event_1"></span>
+            </div>
+            <div class="timeline-item">
+              <span class="time">13:15 PM</span>
+              <span class="event" data-key="event_2"></span>
+            </div>
+            <div class="timeline-item">
+              <span class="time">13:45 PM</span>
+              <span class="event" data-key="event_3"></span>
+            </div>
+            <div class="timeline-item">
+              <span class="time">15:30 PM</span>
+              <span class="event" data-key="event_4"></span>
+            </div>
+            <div class="timeline-item">
+              <span class="time">22:00 PM</span>
+              <span class="event" data-key="event_5"></span>
+            </div>
+            <div class="timeline-item">
+              <span class="time">23:30 PM</span>
+              <span class="event" data-key="event_6"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="church-location">
+      <div class="church-container">
+        <h2 class="church-page-title" data-key="church_title"></h2>
+
+        <div class="church-columns">
+          <div class="col-text">
+            <p class="church-info-text" data-key="church_info"></p>
+
+            <div class="church-map-row">
+              <div class="map-wrapper-bottom">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.658252445851!2d-8.6720556!3d39.4544834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18903c7336940d%3A0x6e6806e788c0363e!2sIgreja%20de%20S%C3%A3o%20Pedro!5e0!3m2!1spt-PT!2spt!4v1712249600000!5m2!1spt-PT!2spt"
+                  width="100%"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-image">
+            <img
+              src="images/iglesia.png"
+              alt="Igreja Sketch"
+              class="church-sketch-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="finca-location">
+      <div class="finca-container">
+        <div class="finca-title">
+          <h2 class="finca-page-title" data-key="finca_title"></h2>
+        </div>
+        <div class="finca-col-text">
+          <p class="finca-info-text" data-key="finca_info"></p>
+        </div>
+        <div class="finca-columns">
+          <div class="finca-map-row">
+            <div class="map-wrapper-bottom">
+              <iframe
+                src="about:blank"
+                width="100%"
+                height="400"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <div class="finca-col-image">
+            <img
+              src="images/finca.png"
+              alt="Quinta da Ramla Sketch"
+              class="finca-sketch-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bus-section">
+      <div class="bus-container">
+        <div class="bus-row-title">
+          <h2 class="bus-page-title" data-key="bus_title"></h2>
+        </div>
+
+        <div class="bus-row-middle">
+          <div class="bus-intro-box">
+            <p class="bus-intro-text" data-key="bus_intro"></p>
+          </div>
+          <div class="bus-image-box">
+            <img
+              src="images/autobus.png"
+              alt="Bus Illustration"
+              class="bus-sketch-img"
+            />
+          </div>
+        </div>
+
+        <div class="bus-row-bottom">
+          <ul class="bus-schedule">
+            <li data-key="bus_route_1"></li>
+            <li data-key="bus_point"></li>
+            <ul class="bus-sub-list">
+              <li>11H00M</li>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/PL69DDJC5FNVEJWZ7"
+                  target="_blank"
+                  >HTTPS://MAPS.APP.GOO.GL/PL69DDJC5FNVEJWZ7</a
+                >
+              </li>
+            </ul>
+            <li data-key="bus_route_2"></li>
+            <li data-key="bus_departure"></li>
+            <li data-key="bus_route_3"></li>
+            <li data-key="bus_return">]</li>
+            <li data-key="bus_path"></li>
+          </ul>
+
+          <p class="bus-note-text" data-key="bus_note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp-page" class="rsvp-page">
+      <div class="rsvp-grid">
+        <div class="rsvp-left">
+          <h2 class="rsvp-title" data-key="rsvp_title"></h2>
+          <img
+            src="images/floral_white.png"
+            alt="Floral"
+            class="floral-welcome"
+          />
+          <p class="welcome-date">
+            <span data-key="date_month"></span>
+            <span>2026</span>
+          </p>
+        </div>
+
+        <div class="rsvp-right">
+          <div class="rsvp-container">
+            <p class="rsvp-text" data-key="rsvp_intro"></p>
+            <a
+              href="YOUR_FORM_LINK_HERE"
+              class="rsvp-button"
+              data-key="rsvp_button"
+              target="_blank"
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="dietary-restrictions">
+        <div class="dietary-container">
+          <h2 class="dietary-page-title" data-key="dietary_title"></h2>
+
+          <div class="dietary-content-row">
+            <div class="dietary-col-text">
+              <p class="dietary-info-text" data-key="dietary_info"></p>
+              <p class="dietary-note-text" data-key="dietary_note"></p>
+            </div>
+            <div class="dietary-col-image">
+              <img
+                src="images/mesa.png"
+                alt="Dining Sketch"
+                class="dietary-sketch-img"
+              />
+            </div>
+          </div>
+
+          <div class="dietary-footer">
+            <p class="dietary-deadline" data-key="dietary_deadline"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel-page">
+      <div class="travel-container">
+        <h2 class="travel-page-title" data-key="travel_title">
+          PLANEIA A TUA VIAGEM
+        </h2>
+
+        <div class="travel-columns">
+          <div class="travel-col-image">
+            <img
+              src="images/floral_white.png"
+              alt="Floral"
+              class="floral-welcome"
+            />
+            <p class="welcome-date">
+              <span data-key="date_month"></span>
+              <span>2026</span>
+            </p>
+          </div>
+
+          <div class="travel-col-text">
+            <p class="travel-info-text" data-key="travel_intro"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lodging-dining-page" class="content-page">
+      <div class="info-grid">
+        <div class="info-col-text">
+          <div class="info-block">
+            <h2 class="info-title" data-key="hotels_title"></h2>
+            <p class="info-description" data-key="hotels_desc_1"></p>
+            <p class="info-description" data-key="hotels_desc_2"></p>
+            <span class="info-link" data-key="link_text_hotel"
+              ><a href="https://www.fatima-hotels.com" target="_blank"
+                >WWW.FATIMA-HOTELS.COM</a
+              ></span
+            >
+          </div>
+
+          <div class="info-block">
+            <h2 class="info-title" data-key="restaurants_title"></h2>
+            <p class="info-description" data-key="restaurants_desc"></p>
+          </div>
+        </div>
+
+        <div class="info-col-images">
+          <div class="image-card">
+            <img src="images/hotel_eurosol.png" alt="Hotel Eurosol" />
+            <p class="image-caption">HOTEL EUROSOL - ALCANENA</p>
+          </div>
+          <div class="image-card">
+            <img
+              src="images/taberna_do_bacalhau.png"
+              alt="Taberna do Bacalhau"
+            />
+            <p class="image-caption">
+              RESTAURANTE A TABERNA DO BACALHAU - FÁTIMA
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tourism-page" class="tourism-page">
+      <div class="tourism-container">
+        <h2 class="tourism-title" data-key="tourism_title"></h2>
+
+        <div class="tourism-main-grid">
+          <div class="tourism-text-block">
+            <p class="tourism-description" data-key="tourism_desc"></p>
+
+            <div class="tourism-card card-left">
+              <img src="images/alviela.jpg" alt="Manantial Olhos d'Água" />
+              <p class="image-caption">
+                MANANTIAL OLHOS D’ÁGUA, ALVIELA - ALCANENA
+              </p>
+            </div>
+          </div>
+
+          <div class="tourism-card card-right">
+            <img src="images/santarem.jpg" alt="Vista desde Portas do Sol" />
+            <p class="image-caption">
+              EL TAJO, VISTA DESDE PORTAS DO SOL – SANTARÉM
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel-links-page" class="content-page">
+      <div class="travel-links-container">
+        <p class="links-intro-text" data-key="links_intro"></p>
+
+        <div class="links-visual-grid">
+          <div class="qr-box">
+            <img
+              src="images/qr_code_maps.png"
+              alt="QR Code Google Maps"
+              class="qr-image"
+            />
+          </div>
+
+          <div class="maps-box">
+            <a
+              href="https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sgS4hOxOnWq5orRNpGUeNm8YLleQpuA!3e3?entry=tts&g_ep=EgoyMDI2MDMxOC4xKgBIAVAD&skid=e78823a8-5802-41f0-93fa-89c739e7b69b"
+              target="_blank"
+              class="maps-preview-link"
+            >
+              <div class="maps-content">
+                <img src="images/maps_mini_icon.png" alt="Maps Icon" />
+                <div class="maps-text">
+                  <span class="maps-brand">Google Maps</span>
+                  <p class="maps-desc" data-key="maps_box_text"></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <p class="links-help-text" data-key="links_help"></p>
+        <a
+          href="https://www.visitportugal.com/es"
+          target="_blank"
+          class="visit-portugal-link"
+        >
+          https://www.visitportugal.com/es
+        </a>
+      </div>
+    </section>
+
+    <section id="faqs-page" class="content-page">
+      <div class="faqs-grid">
+        <div class="faqs-left">
+          <h2 class="faqs-title" data-key="faqs_title">FAQS</h2>
+          <img
+            src="images/floral_white.png"
+            alt="Floral"
+            class="floral-welcome"
+          />
+          <p class="faqs-date">
+            <span>5 SEPTIEMBRE, 2026</span>
+          </p>
+        </div>
+
+        <div class="faqs-right">
+          <div class="faqs-container" data-key="faqs_content"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-page">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="contact-title" data-key="contact_title">CONTACTOS</h2>
+          <img
+            src="images/floral_green.png"
+            alt="Floral"
+            class="floral-welcome"
+          />
+          <p class="contact-date">5 SEPTIEMBRE, 2026</p>
+        </div>
+
+        <div class="contact-right">
+          <p class="contact-intro" data-key="contact_intro"></p>
+
+          <div class="phone-grid">
+            <div class="phone-item">
+              <span class="contact-name">MARGA:</span>
+              <a href="tel:+34655510225" class="phone-link">+34 655 510 225</a>
+            </div>
+            <div class="phone-item">
+              <span class="contact-name">CHEMA:</span>
+              <a href="tel:+34617913756" class="phone-link">+34 617 913 756</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
