@@ -1,257 +1,1365 @@
 /* 1. VARIABLES & RESET */
 :root {
-    --sage-bg: #98ac84;        /* Sage green from screenshots */
-    --wedding-white: #ffffff;  /* Pure white for countdown */
-    --wedding-gold: #ead8b1;   /* Gold/Cream for left-side info */
-    --cream-light: #f9f4f2;    /* Background for other sections */
-    --text-dark: #333333;
+  --sage-bg: rgb(165, 179, 139); /* Sage green from screenshots */
+  --wedding-white: #ffffff; /* Pure white for countdown */
+  --wedding-gold: rgb(243, 219, 185); /* Gold/Cream for left-side info */
+  --cream-light: #f9f4f2; /* Background for other sections */
+  --text-dark: rgb(78, 97, 70);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    font-family: 'Cinzel', serif; 
-    background-color: var(--sage-bg);
-    color: var(--wedding-white);
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+body,
+html {
+  height: 100%;
+  font-family: "Cinzel", serif;
+  color: var(--wedding-white);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Makes fonts look thinner and crisper */
 }
 
 /* 2. LANGUAGE SWITCHER */
 .lang-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    color: var(--wedding-white);
-    background: rgba(0, 0, 0, 0.1); /* Slight background for readability */
-    padding: 5px 10px;
-    border-radius: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  color: var(--wedding-white);
+  background: rgba(0, 0, 0, 0.1); /* Slight background for readability */
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 .lang-switch button {
-    background: none;
-    border: none;
-    color: var(--wedding-white);
-    cursor: pointer;
-    font-weight: bold;
-    padding: 5px;
-    transition: opacity 0.3s;
+  background: none;
+  border: none;
+  color: var(--wedding-white);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px;
+  transition: opacity 0.3s;
 }
 
 .lang-switch button:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 /* 3. PAGE 1: HERO SECTION [cite: 1, 4-12] */
 #hero-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 20px;
-    background-color: var(--sage-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: var(--sage-bg);
 }
 
 .names-container {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 h1 {
-    font-size: clamp(1.5rem, 5vw, 2.8rem); /* Responsive font size */
-    font-weight: 400;
-    letter-spacing: 8px;
-    margin: 10px 0;
+  font-size: clamp(1.5rem, 5vw, 2.8rem); /* Responsive font size */
+  font-weight: 400;
+  letter-spacing: 8px;
+  margin: 10px 0;
 }
 
 .ampersand {
-    font-size: 1.8rem;
-    display: block;
-    margin: 5px 0;
+  font-size: 1.8rem;
+  display: block;
+  margin: 5px 0;
 }
 
 .floral-container {
-    width: 100%;
-    max-width: 650px;
-    margin: 20px 0;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .floral-art {
-    width: 100%;
-    height: auto;
+  width: 110%;
+  height: auto;
 }
 
 /* 4. BOTTOM GRID (INFO & COUNTDOWN) */
 .bottom-grid {
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Allows wrapping on small screens */
-    gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 30px;
 }
 
 .event-info {
-    color: var(--wedding-gold); 
-    text-align: center;
+  color: var(--wedding-white);
+  text-align: center;
 }
 
 .casamos {
-    letter-spacing: 5px;
-    font-size: 1.8rem; 
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .date-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+  color: var(--wedding-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
-.date-box, .location-box {
-    font-size: 1.1rem;
-    letter-spacing: 3px;
-    line-height: 1.6;
+.date-box,
+.location-box {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  line-height: 1.6;
 }
 
 .vertical-divider {
-    width: 1px;
-    height: 70px;
-    background-color: var(--wedding-gold);
+  width: 1px;
+  height: 70px;
+  background-color: var(--wedding-gold);
 }
 
 .timer-container {
-    color: var(--wedding-white);
-    text-align: center;
-    min-width: 300px;
+  color: var(--wedding-white);
+  text-align: center;
+  min-width: 300px;
 }
 
 .countdown-numbers {
-    font-size: clamp(2rem, 8vw, 4.5rem); 
-    letter-spacing: 5px;
-    font-weight: 300;
-    line-height: 1;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  letter-spacing: 5px;
+  font-weight: 300;
+  line-height: 1;
 }
 
 .countdown-labels {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    margin-top: 15px;
-    padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  padding: 0 10px;
 }
 
-/* 5. PAGE 2: WELCOME SECTION */
-#welcome-page {
-    background-color: var(--wedding-white);
-    color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 100px 5%;
+/* 5. PAGE 2: WELCOME & SCHEDULE SECTION */
+#welcome-page,
+.schedule-page,
+.rsvp-page, .tourism-page {
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 5%;
+  height: 100vh;
 }
 
-.welcome-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Slightly wider right column for story */
-    gap: 60px;
-    max-width: 1100px;
-    align-items: start;
-    margin-bottom: 60px;
+.welcome-grid,
+.schedule-grid,
+.rsvp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Slightly wider right column for story */
+  gap: 60px;
+  max-width: 1100px;
+  align-items: center;
 }
 
-.welcome-left {
-    text-align: left;
+.schedule-grid {
+  margin-top: 40px;
 }
 
-.welcome-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    color: var(--sage-bg);
-    margin-bottom: 30px;
-    line-height: 0.9;
+.welcome-left,
+.schedule-left,
+.rsvp-left {
+  text-align: left;
+}
+
+.welcome-title,
+.schedule-title,
+.timeline-title,
+.rsvp-title, .info-title {
+  font-size: clamp(2.5rem, 8vw, 3.88rem);
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  line-height: 0.9;
+  font-weight: 400;
+  font-kerning: none;
 }
 
 .floral-welcome {
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .welcome-date {
-    font-size: 1.1rem;
-    letter-spacing: 4px;
-    opacity: 0.8;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  opacity: 0.8;
 }
 
-.welcome-right {
-    text-align: right;
-    font-family: 'Cinzel', serif;
+/* CENTERED STORY TEXT FIX */
+.welcome-right,
+.schedule-right,
+.rsvp-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centers the container */
+  text-align: center; /* Centers the lines of text */
 }
 
-.story-container p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
+.story-container,
+.schedule-container,
+.rsvp-container {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300; /* Thin appearance */
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: rgb(46 57 41);
+}
+
+.story-container p,
+.schedule-container p,
+.rsvp-container p {
+  margin-bottom: 1rem;
 }
 
 .story-footer {
-    font-weight: bold;
-    margin-top: 30px;
-    display: block;
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
 }
 
 /* 6. MAP STYLING [cite: 24-33] */
 .map-container {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 40px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .map-image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 /* 7. MOBILE RESPONSIVENESS */
 @media (max-width: 850px) {
-    .welcome-grid {
+  .welcome-grid,
+  .schedule-grid,
+  .church-container,
+  .rsvp-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .schedule-grid {
+    padding-top: 360px;
+  }
+  .church-container {
+    padding-top: 700px;
+  }
+  .welcome-left,
+  .welcome-right,
+  .schedule-right,
+  .schedule-left,
+  .rsvp-left,
+  .rsvp-right {
+    text-align: center;
+  }
+  .welcome-title,
+  .schedule-title,
+  .rsvp-title, .info-title {
+    font-size: 3.5rem;
+  }
+  .bottom-grid {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .vertical-divider {
+    height: 1px;
+    width: 100px;
+  }
+  .date-location {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Shared Content Page Styling */
+.content-page {
+  color: var(--text-dark);
+  padding: 120px 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* TIMELINE STYLING */
+#timeline-section {
+  padding-top: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.timeline-left {
+  text-align: left;
+}
+
+.timeline-right {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--sage-bg); /* First top line */
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--sage-bg); /* Horizontal dividers */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.time {
+  width: 120px; /* Precise spacing for the time column */
+  font-weight: 300;
+}
+
+.event {
+  font-weight: 400;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-left {
+    text-align: center;
+  }
+  .timeline-item {
+    justify-content: left;
+    font-size: 0.8rem;
+  }
+}
+
+/* CHURCH LOCATION SECTION */
+#church-location {
+  background-color: #ffffff;
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.church-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title at the top  */
+.church-page-title,
+.bus-page-title,
+.dietary-page-title {
+  font-size: clamp(2.5rem, 8vw, 3.88rem);
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 0.9;
+  font-weight: 400;
+  font-kerning: none;
+}
+
+.dietary-page-title {
+  margin-top: 40px;
+}
+
+/* Two Columns Row  */
+.church-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.col-text {
+  text-align: center;
+  margin-left: 80px;
+}
+
+.church-info-text {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  text-transform: uppercase;
+  color: #333333;
+  margin: 30px 0;
+}
+
+.col-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.church-sketch-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Map Row  */
+.church-map-row {
+  width: 100%;
+  max-width: 600px; /* Constrains the map width for better aesthetics */
+}
+
+.map-wrapper-bottom {
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Optimized Mobile Adjustments for Church Location */
+@media (max-width: 768px) {
+  #church-location {
+    padding: 40px 5%;
+  }
+
+  .church-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything on mobile */
+  }
+
+  /* 1. Title at the top */
+  .church-page-title {
+    order: 1;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .church-columns {
+    display: flex; /* Switch from grid to flex for easier ordering */
+    flex-direction: column;
+    grid-template-columns: 1fr; /* Fallback */
+    gap: 20px;
+    order: 2; /* This container holds the text and image */
+  }
+
+  /* 2. Text comes after Title */
+  .col-text {
+    order: 1;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  /* 3. Map Row comes after Text */
+  .church-map-row {
+    order: 3;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  /* 4. Image comes last */
+  .col-image {
+    order: 2; /* Within the church-columns container */
+    margin-top: 20px;
+  }
+
+  /* Adjusting the Church Sketch specifically for the bottom */
+  .church-sketch-img {
+    max-width: 280px; /* Slightly smaller for mobile screens */
+  }
+
+  /* Ensure the wrapper is centered */
+  .map-wrapper-bottom {
+    max-width: 100%;
+  }
+}
+
+/* FINCA LOCATION SECTION */
+#finca-location {
+  background-color: var(--wedding-white);
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.finca-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finca-title {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.finca-page-title {
+  font-size: clamp(2.5rem, 8vw, 3.88rem);
+  color: var(--text-dark);
+  margin-bottom: 50px;
+  line-height: 0.9;
+  font-weight: 400;
+  font-kerning: none;
+}
+
+.finca-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.finca-col-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.finca-info-text {
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  text-transform: uppercase;
+  color: #333333;
+  margin: 30px 0;
+}
+
+.finca-col-image {
+  display: flex;
+  justify-content: center;
+}
+
+.finca-sketch-img {
+  width: 100%;
+  max-width: 450px; /* Quinta sketch is horizontally wider than the church */
+  height: auto;
+}
+
+.finca-map-row {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* MOBILE RESPONSIVE ORDER: Title -> Text -> Map -> Image */
+@media (max-width: 850px) {
+  .finca-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finca-page-title {
+    order: 1;
+    margin-bottom: 30px;
+  }
+
+  .finca-columns {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    gap: 20px;
+  }
+
+  .finca-col-text {
+    order: 1;
+    margin-bottom: 0px;
+  } /* Text first inside columns */
+  .finca-col-image {
+    order: 2;
+    margin-top: 40px;
+  } /* Image last inside columns */
+
+  .finca-map-row {
+    order: 3; /* Map sits between text and image row */
+    margin-bottom: 20px;
+  }
+}
+/* BUS SECTION CONSOLIDATED */
+#bus-section {
+  background-color: var(--wedding-white);
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.bus-container {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row 1: Standalone Title */
+.bus-row-title {
+  width: 100%;
+}
+
+/* Row 2: Text and Image */
+.bus-row-middle {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.bus-intro-text {
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  color: #333333;
+}
+
+.bus-sketch-img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+/* Row 3: Stacked Schedule and Note */
+.bus-row-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.bus-schedule {
+  list-style: disc;
+  margin-bottom: 40px;
+  width: fit-content;
+  font-family: "Cinzel", serif;
+  max-width: 800px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  color: #333333;
+}
+
+.bus-note-text,
+.rsvp-text,
+.dietary-info-text,
+.dietary-note-text,
+.dietary-deadline,
+.travel-text, .travel-info-text, .info-description, .tourism-description {
+  font-family: "Cinzel", serif;
+  max-width: 800px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 2.5;
+  color: #333333;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+  .bus-row-middle {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .bus-intro-text {
+    order: 1;
+  }
+  .bus-image-box {
+    order: 2;
+    margin-top: 20px;
+  }
+  .bus-page-title,
+  .dietary-page-title {
+    text-align: center;
+  }
+
+  .bus-schedule {
+    width: 100%; /* Take full width on mobile */
+    padding-left: 0;
+    list-style: none; /* Remove bullets for a cleaner mobile look */
+    text-align: center;
+  }
+
+  .bus-schedule li {
+    margin-bottom: 15px;
+    font-size: 0.8rem; /* Slightly smaller for mobile  */
+    padding: 0 10px;
+  }
+
+  .bus-sub-list {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  /* CRITICAL: Fix for the long Google Maps URL  */
+  .bus-sub-list li a {
+    display: block;
+    word-break: break-all; /* Forces long URLs to wrap to the next line  */
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-top: 10px;
+    text-decoration: underline;
+  }
+
+  .bus-note-text {
+    width: 100%;
+    padding: 0 15px;
+    font-size: 0.8rem;
+    margin-top: 30px; /* Space between schedule and note */
+  }
+}
+
+.rsvp-text {
+  margin-bottom: 40px;
+}
+
+/* Styled Button for RSVP  */
+.rsvp-button {
+  display: inline-block;
+  padding: 15px 40px;
+  border: 1px solid var(--sage-bg);
+  color: var(--sage-bg);
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.rsvp-button:hover {
+  background-color: var(--text-dark);
+  color: white;
+}
+
+/* DIETARY SECTION LAYOUT */
+#dietary-restrictions {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.dietary-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row 2: Columns */
+.dietary-content-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Image Left, Text Right */
+  align-items: center;
+}
+
+.dietary-col-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dietary-sketch-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.dietary-col-text {
+  text-align: center;
+}
+
+.dietary-note-text {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Row 3: Deadline */
+.dietary-footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.dietary-deadline {
+  font-size: 0.95rem;
+  font-weight: bolder;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+  .dietary-content-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  /* Mobile Order: Title -> Text -> Image -> Deadline */
+  .dietary-col-text {
+    order: 1;
+  }
+  .dietary-col-image {
+    order: 2;
+    margin-top: 30px;
+  }
+}
+
+/* Optimized Mobile Fix for RSVP & Content Sections */
+@media (max-width: 850px) {
+  #rsvp-page,
+  #welcome-page,
+  .schedule-page,
+  .content-page, .tourism-page {
+    height: auto; /* Change from 100vh to allow content to grow */
+    min-height: 100vh;
+    padding: 60px 5%;
+  }
+
+  .rsvp-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduced gap for mobile */
+  }
+
+  .rsvp-left {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Fix for the title overlapping floral image */
+  .rsvp-title {
+    font-size: 2.5rem; /* Smaller font for mobile */
+    margin-bottom: 20px;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .rsvp-left .floral-welcome {
+    max-width: 250px; /* Control image size */
+    margin: 15px 0;
+  }
+
+  .rsvp-right {
+    order: 2;
+    margin-top: 30px;
+  }
+
+  .rsvp-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  /* Specific fix for the date at the bottom */
+  .welcome-date {
+    font-size: 1rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+/* TRAVEL SECTION LAYOUT */
+#travel-page {
+  background-color: var(--wedding-white);
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.travel-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.travel-page-title {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 8vw, 3.88rem);
+  color: var(--text-dark);
+  margin-bottom: 60px;
+  text-align: left; /* Aligned left to match previous screenshots */
+}
+
+/* Side-by-Side Columns */
+.travel-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Image Left, Text Right */
+  gap: 60px;
+  align-items: center;
+}
+
+.travel-col-image {
+  display: flex;
+  justify-content: flex-start;
+  color: #333333;
+  flex-direction: column;
+}
+
+.travel-floral-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.travel-col-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.travel-info-text {
+  margin-bottom: 30px;
+}
+
+.travel-date {
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  color: var(--text-dark);
+}
+
+/* Responsive Fix for Travel Section */
+@media (max-width: 850px) {
+  .travel-columns {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .travel-col-image {
+    order: 2; /* Floral image goes below text on mobile */
+    justify-content: center;
+  }
+
+  .travel-col-text {
+    order: 1; /* Text stays at the top on mobile */
+    margin-bottom: 30px;
+  }
+}
+
+/* HOTELES & RESTAURANTES STYLING */
+#lodging-dining-page {
+    background-color: var(--wedding-white);
+    padding: 80px 5%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: start;
+}
+
+.info-block {
+    margin-bottom: 80px;
+}
+
+
+.info-link a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #333333;
+    text-decoration: underline;
+    letter-spacing: 1.5px;
+}
+
+/* Right Column Images */
+.info-col-images {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 70px;
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .info-col-images {
+        order: 2;
+    }
+    .info-col-text {
+        order: 1;
+    }
+    .info-title {
+        text-align: center;
+    }
+}
+
+/* TOURISM SECTION STYLING */
+
+.tourism-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tourism-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.tourism-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.tourism-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.tourism-card img {
+    width: 100%;
+    max-height: 550px;
+    height: auto;
+    display: block;
+}
+
+.card-left {
+    max-width: 500px; /* Alviela image size */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+    .tourism-main-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .tourism-title {
+        text-align: center;
+    }
+
+    .card-right, .card-left {
+        padding-top: 0;
+        margin: 20px auto;
+        max-width: 100%;
+    }
+}
+
+/* TRAVEL LINKS STYLING */
+#travel-links-page {
+    background-color: var(--wedding-white);
+    padding: 60px 5% 120px 5%;
+    text-align: center;
+}
+
+.travel-links-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.links-intro-text, .links-help-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    line-height: 2.2;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin-bottom: 50px;
+}
+
+.links-visual-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.qr-image {
+    width: 200px;
+    height: auto;
+}
+
+/* Styled Google Maps Box */
+.maps-preview-link {
+    text-decoration: none;
+    display: block;
+    background-color: #000; /* Dark background like screenshot */
+    color: #fff;
+    padding: 20px;
+    width: 320px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.maps-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.maps-brand {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.maps-desc {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+/* Visit Portugal Link */
+.visit-portugal-link {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: underline;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .links-visual-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .visit-portugal-link {
+        font-size: 1rem;
+        word-break: break-all;
+    }
+}
+
+/* FAQS SECTION STYLING */
+#faqs-page {
+    background-color: var(--wedding-white);
+    padding: 100px 5%;
+}
+
+.faqs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: start;
+}
+
+.faqs-left {
+    text-align: left;
+    position: sticky; /* Keeps the title visible while scrolling long FAQs on desktop */
+    top: 120px;
+}
+
+.faqs-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 10vw, 5rem);
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.faqs-date {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    color: var(--text-dark);
+    margin-top: 20px;
+}
+
+.faqs-right {
+    text-align: center;
+}
+
+.faqs-container {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    line-height: 2.2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* Question styling inside the container */
+.faqs-container strong {
+    display: block;
+    margin-top: 30px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+    .faqs-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
     }
-    .welcome-left, .welcome-right {
+    .faqs-left {
         text-align: center;
+        position: static;
     }
-    .welcome-title {
-        font-size: 3.5rem;
-    }
-    .bottom-grid {
-        flex-direction: column;
+}
+
+/* CONTACT SECTION STYLING */
+#contact-page {
+    background-color: var(--sage-bg);
+    color: var(--wedding-white);
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+.contact-left {
+    text-align: left;
+}
+
+.contact-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    margin-bottom: 40px;
+    color: var(--wedding-white);
+}
+
+.contact-date {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    margin-top: 20px;
+}
+
+.contact-right {
+    text-align: center;
+}
+
+.contact-intro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    line-height: 2.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.phone-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.contact-name {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.phone-link {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--wedding-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Mobile Fix */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
         gap: 50px;
     }
-    .vertical-divider {
-        height: 1px;
-        width: 100px;
+    .contact-left {
+        text-align: center;
     }
-    .date-location {
+    .phone-grid {
         flex-direction: column;
-        gap: 15px;
+        gap: 40px;
     }
 }
