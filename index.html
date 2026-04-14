@@ -11,6 +11,91 @@
     />
   </head>
   <body>
+    <nav class="main-nav">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="menu-overlay" id="menuOverlay">
+        <ul class="menu-links">
+          <li>
+            <a href="#hero-page" data-key="menu_home" onclick="closeMenu()"></a>
+          </li>
+          <li>
+            <a
+              href="#welcome-page"
+              data-key="menu_welcome"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#schedule-page"
+              data-key="menu_schedule"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#church-location"
+              data-key="menu_church"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#finca-location"
+              data-key="menu_finca"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#bus-section"
+              data-key="menu_bus"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a href="#rsvp-page" data-key="menu_rsvp" onclick="closeMenu()"></a>
+          </li>
+          <li>
+            <a
+              href="#travel-page"
+              data-key="menu_travel"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#lodging-dining-page"
+              data-key="menu_hotels"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#tourism-page"
+              data-key="menu_tourism"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+          <li>
+            <a href="#faqs-page" data-key="menu_faqs" onclick="closeMenu()"></a>
+          </li>
+          <li>
+            <a
+              href="#contact-page"
+              data-key="menu_contact"
+              onclick="closeMenu()"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="lang-switch">
       <button onclick="setLanguage('pt')">PT</button> |
       <button onclick="setLanguage('es')">ES</button>
@@ -191,7 +276,7 @@
           <div class="finca-map-row">
             <div class="map-wrapper-bottom">
               <iframe
-                src="about:blank"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3074.230027880417!2d-8.607732899999998!3d39.5995004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd18839862fbdec1%3A0x455e69b808002b82!2sQuinta%20da%20Ramila!5e0!3m2!1spt-PT!2spt!4v1776016984191!5m2!1spt-PT!2spt"
                 width="100%"
                 height="400"
                 style="border: 0"
@@ -215,47 +300,45 @@
 
     <section id="bus-section" class="tourism-page">
       <div class="bus-container">
-        <div class="bus-row-title">
-          <h2 class="bus-page-title" data-key="bus_title"></h2>
-        </div>
-
-        <div class="bus-row-middle">
-          <div class="bus-intro-box">
-            <p class="bus-intro-text" data-key="bus_intro"></p>
-          </div>
-          <div class="bus-image-box">
+        <div class="bus-grid">
+          <div class="bus-left-col">
+            <h2 class="bus-page-title" data-key="bus_title"></h2>
             <img
               src="images/autobus.png"
               alt="Bus Illustration"
               class="bus-sketch-img"
             />
+            <p class="bus-intro-text" data-key="bus_intro"></p>
           </div>
-        </div>
 
-        <div class="bus-row-bottom">
-          <ul class="bus-schedule">
-            <li data-key="bus_route_1"></li>
-            <li data-key="bus_point"></li>
-            <ul class="bus-sub-list">
+          <div class="bus-right-col">
+            <ul class="bus-schedule">
+              <li class="route-title" data-key="bus_route_1"></li>
+              <li data-key="bus_point"></li>
               <li>11H00M</li>
               <li>
-                <a
-                  href="https://maps.app.goo.gl/PL69DDJC5FNVEJWZ7"
-                  target="_blank"
-                  >HTTPS://MAPS.APP.GOO.GL/PL69DDJC5FNVEJWZ7</a
-                >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1536.4114203851775!2d-8.6806388!3d39.6311926!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd189d3e771397ed%3A0xcddd4d30de9dff5a!2sTerminal%20Rodovi%C3%A1rio%20%2F%20Santu%C3%A1rio!5e0!3m2!1spt-PT!2spt!4v1776205011221!5m2!1spt-PT!2spt"
+                  width="600"
+                  height="450"
+                  style="border: 0; width: 100%; height: 100%"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </li>
-            </ul>
-            <li data-key="bus_route_2"></li>
-            <li data-key="bus_departure"></li>
-            <li data-key="bus_route_3"></li>
-            <li data-key="bus_return">]</li>
-            <li data-key="bus_path"></li>
-          </ul>
 
-          <p class="bus-note-text" data-key="bus_note"></p>
+              <li class="route-title" data-key="bus_route_2"></li>
+              <li data-key="bus_departure"></li>
+
+              <li class="route-title" data-key="bus_route_3"></li>
+              <li data-key="bus_return"></li>
+              <li data-key="bus_path"></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p class="bus-note-text" data-key="bus_note"></p>
     </section>
 
     <section id="rsvp-page" class="rsvp-page">
@@ -276,12 +359,6 @@
         <div class="rsvp-right">
           <div class="rsvp-container">
             <p class="rsvp-text" data-key="rsvp_intro"></p>
-            <a
-              href="YOUR_FORM_LINK_HERE"
-              class="rsvp-button"
-              data-key="rsvp_button"
-              target="_blank"
-            ></a>
           </div>
         </div>
       </div>
@@ -296,6 +373,12 @@
             <div class="dietary-col-text">
               <p class="dietary-info-text" data-key="dietary_info"></p>
               <p class="dietary-note-text" data-key="dietary_note"></p>
+              <a
+                href="YOUR_FORM_LINK_HERE"
+                class="rsvp-button"
+                data-key="rsvp_button"
+                target="_blank"
+              ></a>
             </div>
             <div class="dietary-col-image">
               <img
@@ -334,6 +417,78 @@
 
           <div class="travel-col-text">
             <p class="travel-info-text" data-key="travel_intro"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="driving-page" class="tourism-page">
+      <div class="driving-container">
+        <h2 class="travel-page-title" data-key="driving_title"></h2>
+        <div class="driving-text-top">
+          <p class="driving-intro" data-key="driving_intro"></p>
+          <div class="toll-section">
+            <p class="toll-header" data-key="toll_autopistas"></p>
+            <p class="toll-header" data-key="toll_autovia"></p>
+          </div>
+        </div>
+        <div class="driving-grid">
+          <div class="driving-text-col">
+            <ol class="toll-list" style="padding-left: 20px">
+              <li>
+                <span class="toll-opt" data-key="toll_opt_1_title"></span>
+                <p data-key="toll_opt_1_desc"></p>
+              </li>
+              <li>
+                <span class="toll-opt" data-key="toll_opt_2_title"></span>
+                <p data-key="toll_opt_2_desc"></p>
+              </li>
+              <li>
+                <span class="toll-opt" data-key="toll_opt_3_title"></span>
+                <p data-key="toll_opt_3_desc"></p>
+              </li>
+            </ol>
+          </div>
+          <div class="driving-image-col">
+            <img
+              src="images/red_car.png"
+              alt="Car Illustration"
+              class="car-sketch"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="purchase-page" class="tourism-page">
+      <div class="purchase-container">
+        <h2 class="travel-page-title" data-key="purchase_title"></h2>
+        <div class="purchase-grid">
+          <div class="purchase-text-col">
+            <p class="purchase-intro" data-key="purchase_intro_1"></p>
+            <a
+              href="https://www.ctt.pt/particulares/pagamentos/pagar-servicos-portagens/portagens/matriculas-estrangeiras/easytoll?com.dotmarketing.htmlpage.language=3"
+              target="_blank"
+              class="purchase-link"
+              >LINK CTT PORTUGAL</a
+            >
+
+            <p class="purchase-intro" data-key="purchase_intro_2"></p>
+
+            <p class="purchase-intro" data-key="purchase_intro_3"></p>
+            <a
+              href="https://www.exteriores.gob.es/consulados/oporto/es/comunicacion/noticias/paginas/articulos/20160816_not1.aspx"
+              target="_blank"
+              class="purchase-link"
+              >LINK CONSULADO ESPAÑA</a
+            >
+          </div>
+          <div class="purchase-image-col">
+            <img
+              src="images/white-van.png"
+              alt="Van Illustration"
+              class="van-sketch"
+            />
           </div>
         </div>
       </div>
@@ -477,7 +632,10 @@
             alt="Floral"
             class="floral-welcome"
           />
-          <p class="contact-date">5 SEPTIEMBRE, 2026</p>
+          <p class="welcome-date">
+            <span data-key="date_month"></span>
+            <span>2026</span>
+          </p>
         </div>
 
         <div class="contact-right">
