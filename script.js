@@ -1,5 +1,17 @@
 const translations = {
   es: {
+    menu_home: "Inicio",
+    menu_welcome: "Bienvenidos",
+    menu_schedule: "Programa",
+    menu_church: "La Iglesia",
+    menu_finca: "La Finca",
+    menu_bus: "Autobuses",
+    menu_rsvp: "Confirmar",
+    menu_travel: "Tu Viaje",
+    menu_hotels: "Hoteles y Restaurantes",
+    menu_tourism: "Turismo",
+    menu_faqs: "Preguntas",
+    menu_contact: "Contactos",
     nos_casamos: "¡NOS CASAMOS!",
     date_month: "5 SEPTIEMBRE,",
     en: "EN",
@@ -82,7 +94,7 @@ const translations = {
       <br>LA ZONA DE FÁTIMA Y ALCANENA.`,
     hotels_desc_2: `EN FÁTIMA, TENEMOS UN CÓDIGO DE DESCUENTO DE 10% EN EL GRUPO DE
       <br>HOTELES DE “UNITED HOTELS” CONSTITUIDOS POR 6 HOTELES, EN LAS
-      <br>NOCHES DEL 4/09 AL 6/09: ANAMJOSEM`,
+      <br>NOCHES DEL 4/09 AL 6/09: <strong>ANAMJOSEM</strong>`,
     link_text_hotel: "SOLO RESERVAS A TRAVÉS DE LA WEB:",
     restaurants_title: "RESTAURANTES",
     restaurants_desc: `PARA FACILITAR LA PLANIFICACIÓN DE LOS DÍAS PREVIOS A LA BODA, HEMOS
@@ -124,8 +136,40 @@ const translations = {
     contact_title: "CONTACTOS",
     contact_intro:
       "SI TENÉIS DUDAS O QUERÉIS CONTACTARNOS POR CUALQUIER OTRO MOTIVO, POR FAVOR NO DUDÉIS EN LLAMARNOS O MANDAR UN MENSAJE:",
+    driving_title: "SI VIENES EN COCHE",
+    driving_intro: "EN PORTUGAL EXISTEN DOS TIPOS DE PEAJES:",
+    toll_autopistas: `EN <strong>AUTOPISTAS</strong> - CON BARRERA, QUE SE PUEDEN PAGAR EN LAS CABINAS O BIEN PASANDO POR VÍA VERDE CON TU VIA- T INSTALADO EN EL COCHE.`,
+    toll_autovia:
+      "EN <strong>AUTOVÍA</strong> - LOS PEAJES ELECTRÓNICOS PARA LOS CUALES TAMBIÉN TE VALDRIA EL VIA-T O LAS SIGUIENTES OPCIONES:",
+    toll_opt_1_title: "EASYTOLL (LA OPCIÓN MÁS SENCILLA PARA VIAJES CORTOS)",
+    toll_opt_1_desc:
+      "REGISTRAS TU MATRÍCULA + TARJETA EN MÁQUINAS SITUADAS EN LA FRONTERA. <br>FUNCIONA DURANTE 30 DÍAS.",
+    toll_opt_2_title: "TOLLCARD",
+    toll_opt_2_desc:
+      "TARJETAS PREPAGO DE 5, 10, 20 O 40 €. <br>SE ACTIVAN ONLINE CON TU MATRÍCULA. <br>VALEN DURANTE 1 AÑO.",
+    toll_opt_3_title: "TOLLSERVICE",
+    toll_opt_3_desc:
+      "PASES DE 3 DÍAS O RUTAS CONCRETAS (POR EJEMPLO, DESDE AEROPUERTOS). <br>ÚTIL SI VAS A HACER TRAYECTOS MUY ESPECÍFICOS.",
+
+    purchase_title: "DONDE COMPRAR Y MÁS INFORMACIÓN",
+    purchase_intro_1: "PARA EL EASYTOLL O TOLLCARD ENTRÁIS EN LA WEB:",
+    purchase_intro_2:
+      "DONDE TENÉIS TODA LA INFORMACIÓN PARA COMPRAR ONLINE, SABER DONDE PODER COMPRAR Y QUE CARRETERAS LO NECESITAN.",
+    purchase_intro_3: "AQUÍ TENÉIS MÁS INFORMACIÓN TAMBIÉN:",
   },
   pt: {
+    menu_home: "Início",
+    menu_welcome: "Bem-vindos",
+    menu_schedule: "Programa",
+    menu_church: "A Igreja",
+    menu_finca: "A Quinta",
+    menu_bus: "Autocarros",
+    menu_rsvp: "Confirmar",
+    menu_travel: "Tua Viagem",
+    menu_hotels: "Hotéis e Restaurantes",
+    menu_tourism: "Turismo",
+    menu_faqs: "Perguntas",
+    menu_contact: "Contactos",
     nos_casamos: "VAMOS CASAR!",
     date_month: "5 SETEMBRO,",
     en: "EM",
@@ -207,7 +251,7 @@ const translations = {
       <br>ZONA DE FÁTIMA E ALCANENA.`,
     hotels_desc_2: `EM FÁTIMA, TEMOS UM CÓDIGO DE DESCONTO DE 10% PARA A CADEIA DE
       <brR>HOTÉIS “UNITED HOTELS” CONSTITUÍDO POR 6 HOTÉIS, NAS NOITES DE
-      <br>4/09 A 6/09: ANAMJOSEM`,
+      <br>4/09 A 6/09: <strong>ANAMJOSEM</strong>`,
     link_text_hotel: "SÓ PARA RESERVAS ATRAVÉS DO SITE:",
     restaurants_title: "RESTAURANTES",
     restaurants_desc: `PARA FACILITAR O PLANEAMENTO DOS DIAS QUE ANTECEDEM O CASAMENTO,
@@ -251,31 +295,38 @@ const translations = {
   },
 };
 
+const menuToggle = document.getElementById("menuToggle");
+const menuOverlay = document.getElementById("menuOverlay");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  menuOverlay.classList.toggle("active");
+});
+
+function closeMenu() {
+  menuToggle.classList.remove("active");
+  menuOverlay.classList.remove("active");
+}
+
 function setLanguage(lang) {
   document.querySelectorAll("[data-key]").forEach((elem) => {
     const key = elem.getAttribute("data-key");
-    if (
-      key === "welcome_story" ||
-      key === "schedule_intro" ||
-      key === "church_info" ||
-      key === "finca_info" ||
-      key === "bus_intro" ||
-      key === "bus_note" ||
-      key === "rsvp_intro" ||
-      key === "dietary_info" ||
-      key === "dietary_note" ||
-      key === "travel_intro" ||
-      key === "hotels_desc_1" ||
-      key === "hotels_desc_2" ||
-      key === "restaurants_desc" ||
-      key === "tourism_desc" ||
-      key === "links_help" ||
-      key === "links_intro" ||
-      key === "faqs_content"
-    )
+    if (translations[lang] && translations[lang][key]) {
       elem.innerHTML = translations[lang][key];
-    else elem.textContent = translations[lang][key];
+    }
   });
+
+  // CONDITIONAL VISIBILITY FOR DRIVING PAGES
+  const drivingPage = document.getElementById("driving-page");
+  const purchasePage = document.getElementById("purchase-page");
+
+  if (lang === "es") {
+    drivingPage.style.display = "flex";
+    purchasePage.style.display = "flex";
+  } else {
+    drivingPage.style.display = "none";
+    purchasePage.style.display = "none";
+  }
 }
 
 // Set default text on load
