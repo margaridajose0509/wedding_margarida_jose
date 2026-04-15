@@ -6,10 +6,10 @@ const translations = {
     menu_church: "La Iglesia",
     menu_finca: "La Finca",
     menu_bus: "Autobuses",
-    menu_rsvp: "Confirmacion De Assistencia",
+    menu_rsvp: "Confirmacion De Asistencia",
     menu_travel: "Planifica Tu Viaje",
     menu_hotels: "Hoteles y Restaurantes",
-    menu_tourism: "Puntos Turisticos De Interés",
+    menu_tourism: "Puntos De Interés Turisticos",
     menu_faqs: "FAQS",
     menu_contact: "Contactos",
     nos_casamos: "¡NOS CASAMOS!",
@@ -37,7 +37,7 @@ const translations = {
             quiero”. Y por supuesto, no podía ser sin vosotros, las<br>
             personas que hacen todo esto aún más especial.</p>
             
-            <p class="welcome-footer-text">Bienvenidos a nuestra historia 💛</p>`,
+            <p class="welcome-footer-text">Bienvenidos a nuestra historia ❤️</p>`,
     schedule_title: "EL GRAN DIA",
     schedule_intro: `Queremos compartir con vosotros cada<br>
             momento especial de este día tan importante.<br>
@@ -49,13 +49,13 @@ const translations = {
     event_2: "SALIDA HACIA LA FINCA",
     event_3: "COCTEL",
     event_4: "COMIDA",
-    event_5: "RECENA",
+    event_5: "CENA",
     event_6: "FIESTA / DJ",
     church_title: "UBICACION DE LA IGLESIA",
     church_info: `LA CEREMONIA TENDRÁ LUGAR EN<br>
       LA IGLESIA DE S. PEDRO DE ALCANENA`,
     finca_title: "UBICACION DE LA FINCA",
-    finca_info: `DESPUÉS DE LA CEREMONIA, NOS DIRIGIREMOS A LA<br>FINCA DONDE CONTINUARÁ LA CELEBRACIÓN, CON<br>ALMUERZO, TARTA Y FIESTA.`,
+    finca_info: `DESPUÉS DE LA CEREMONIA, NOS DIRIGIREMOS A LA<br>FINCA DONDE CONTINUARÁ LA CELEBRACIÓN, CON<br>BANQUETE, TARTA Y FIESTA.`,
     bus_title: "AUTOBUSES",
     bus_intro:
       "PARA FACILITAR EL DESPLAZAMIENTO DE TODOS, <br>PONDREMOS A DISPOSICIÓN AUTOBUSES EN LOS <br>SIGUIENTES HORARIOS:",
@@ -64,7 +64,7 @@ const translations = {
     bus_route_2: "DE LA IGLESIA A LA FINCA:",
     bus_departure: "SALIDA PREVISTA: 13:H00M",
     bus_route_3: "DE LA FINCA A ALCANENA (CON PARADA EN FÁTIMA):",
-    bus_return: "HORA DE REGRESO: 03H00M",
+    bus_return: "HORA DE REGRESO: 00H00M Y 03H00M",
     bus_path: "RECORRIDO: FINCA → FÁTIMA → ALCANENA",
     bus_note:
       "OS PEDIMOS POR FAVOR, QUE INDIQUÉIS EN EL FORMULARIO, SI VAIS A <br>UTILIZAR EL AUTOBÚS Y, SI VAIS ACOMPAÑADOS, HACED LO MISMO CON <br>LAS PREFERENCIAS DE VUESTROS ACOMPAÑANTES.",
@@ -80,7 +80,7 @@ const translations = {
     dietary_note: `BASTA UNA RESPUESTA POR FAMILIA; POR FAVOR, RELLENAD LOS
       <br>DATOS DE CADA MIEMBRO.`,
     dietary_deadline:
-      "AGRADECEMOS QUE RELLENÉIS EL FORMULARIO ANTES DEL DÍA 05/06/2026.",
+      "AGRADECEMOS QUE RELLENÉIS EL FORMULARIO ANTES DEL DÍA 30/06/2026.",
     travel_title: "PLANEA TU VIAJE",
     travel_intro: `PARA QUE PODÁIS VIVIR LA AUTÉNTICA EXPERIENCIA
       <br>PORTUGUESA DEL RIBATEJO, AQUÍ OS DEJAMOS
@@ -195,7 +195,7 @@ const translations = {
             claro, não podia ser sem vocês, as pessoas que fazem tudo<br>
             ter ainda mais sentido.</p>
 
-            <p>Bem-vindos à nossa história 💛</p>`,
+            <p>Bem-vindos à nossa história ❤️</p>`,
     schedule_title: "O GRANDE DIA",
     schedule_intro: `Queremos partilhar convosco cada momento<br>
             especial deste dia tão importante. Aqui está o<br>
@@ -221,7 +221,7 @@ const translations = {
     bus_route_2: "DA IGREJA PARA A QUINTA:",
     bus_departure: "PARTIDA PREVISTA: 13:H00M",
     bus_route_3: "DA QUINTA PARA ALCANENA (COM PARAGEM EM FÁTIMA):",
-    bus_return: "HORA DE REGRESSO: 03H00M",
+    bus_return: "HORA DE REGRESSO: 00H00M E 03H00M",
     bus_path: "PERCURSO: QUINTA → FÁTIMA → ALCANENA",
     bus_note:
       "PEDIMOS-VOS QUE INDIQUEM NO FORMULÁRIO, SE VÃO UTILIZAR O <br>AUTOCARRO E, CASO ESTEJAM ACOMPANHADOS, FAÇAM O MESMO EM <br>RELAÇÃO ÀS PREFERÊNCIAS DOS VOSSOS ACOMPANHANTES.",
@@ -237,7 +237,7 @@ const translations = {
     dietary_note: `BASTA UMA RESPOSTA POR FAMÍLIA; POR FAVOR, PREENCHAM OS
       <br>DADOS DE CADA MEMBRO.`,
     dietary_deadline:
-      "AGRADECEMOS QUE PREENCHAM O FORMULÁRIO ATÉ AO DIA 05/06/2026.",
+      "AGRADECEMOS QUE PREENCHAM O FORMULÁRIO ATÉ AO DIA 30/06/2026.",
     travel_title: "PLANEIA A TUA VIAGEM",
     travel_intro: `PARA QUE POSSAM VIVER A AUTÊNTICA EXPERIÊNCIA 
       <br>PORTUGUESA DO RIBATEJO, DEIXAMOS AQUI ALGUMAS
