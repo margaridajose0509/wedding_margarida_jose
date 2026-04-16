@@ -185,7 +185,7 @@ const translations = {
 
             <p>E não foi com um espanhol qualquer… foi com um<br>
             madrilenho-galego que, surpreendentemente, é mais<br>
-            português do que muitos portugueses!</p>
+            português do que muitos portugueses! 🇵🇹</p>
 
             Entre viagens, gargalhadas, momentos improváveis e muitas<br>
             histórias para contar, fomos escrevendo a nossa própria<br>
@@ -257,9 +257,9 @@ const translations = {
     restaurants_desc: `PARA FACILITAR O PLANEAMENTO DOS DIAS QUE ANTECEDEM O CASAMENTO,
       <br>REUNIMOS UMA LISTA DE RESTAURANTES RECOMENDADOS NA ZONA DE
       <br>ALCANENA E ARREDORES. ESTA SELEÇÃO INCLUI DESDE TABERNAS
-      <<br>TRADICIONAIS ATÉ RESTAURANTES COM ESTRELA MICHELIN.`,
+      <br>TRADICIONAIS ATÉ RESTAURANTES COM ESTRELA MICHELIN.`,
     tourism_title: "PONTOS TURÍSTICOS DE INTERESSE",
-    tourism_desc: `SE ESTÃO A PENSAR PASSAR UNS DIAS NA BELA REGIAO DO RIBATEJO E
+    tourism_desc: `SE ESTÃO A PENSAR PASSAR UNS DIAS NA BELA REGIÃO DO RIBATEJO E
       <br>ARREDORES, DEIXAMOS AQUI ALGUMAS SUGESTÕES DE LOCAIS PARA
       <br>VISITAR, DAR UM PASSEIO PELO CAMPO OU DAR UM MERGULHO NA PRAIA.`,
     links_intro: `AQUI DEIXAMOS O LINK, BEM COMO UM CÓDIGO QR QUE VOS LEVARÁ DIRETAMENTE A UM
